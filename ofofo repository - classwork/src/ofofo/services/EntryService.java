@@ -15,4 +15,5 @@ public interface EntryService {
     Entry getEntryById(long entryId);
     boolean isEntryExist();
     void deleteAllEntries(String username);
+    void deleteAllEntriesByTitle(String currentUsername);
 }

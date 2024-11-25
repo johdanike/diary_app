@@ -58,10 +58,14 @@ public class Main {
     private static void insideLogin(String currentUsername) {
         String option = """
                 1. Create Entry
-                2. Delete Entry By id
-                3. Delete Entry By title
-                4. Delete All Entries
-                5. Logout
+                2. Find Entry By Id
+                3. Find All Entries By Id
+                4. Count Number Of Entries
+                5. Update Entry
+                6. Delete Entry By id
+                7. Delete Entry By title
+                8. Delete All Entries
+                9. Logout
                 """;
             int result = 0;
         try {
@@ -75,6 +79,9 @@ public class Main {
 
         switch (result) {
             case 1: createEntry(currentUsername);
+            case 2: findEntryById(currentUsername);
+            case 3: findAllEntriesById(currentUsername);
+            case 4: countNumberOfEntries(currentUsername);
             case 2: deleteEntryById(currentUsername);
             case 3: deleteEntryByTitle(currentUsername);
             case 4: deleteAllEntries(currentUsername);
@@ -83,9 +90,11 @@ public class Main {
     }
 
     private static void deleteAllEntries(String currentUsername) {
+        entryController.deleteAll(currentUsername);
     }
 
     private static void deleteEntryByTitle(String currentUsername) {
+        entryController.deleteAllEntriesByTitle(currentUsername);
     }
 
     private static void deleteEntryById(String currentUsername) {

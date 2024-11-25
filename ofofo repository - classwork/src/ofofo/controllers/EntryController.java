@@ -22,4 +22,12 @@ public class EntryController {
     public Entry createEntry(String diaryId, String title, String content) {
         return entryService.createEntry(diaryId, title, content);
     }
+
+    public void deleteAll(String currentUsername) {
+        entryService.deleteAllEntries(currentUsername);
+    }
+
+    public void deleteAllEntriesByTitle(String currentUsername) {
+        entryService.deleteAllEntriesByTitle(currentUsername);
+    }
 }

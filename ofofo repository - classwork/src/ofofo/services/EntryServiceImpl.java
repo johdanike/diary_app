@@ -135,5 +135,12 @@ public class EntryServiceImpl implements EntryService {
         entryRepository.deleteAllEntriesById(username);
     }
 
+    @Override
+    public void deleteAllEntriesByTitle(String currentUsername) {
+        if(findEntryByDiaryId(currentUsername) != null) {
+            entryRepository.deleteAllEntriesById(currentUsername);
+        }
+    }
+
 
 }
